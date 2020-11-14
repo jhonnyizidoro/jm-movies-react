@@ -23,6 +23,8 @@ export const NavWrapper = styled.div`
 	justify-content: space-between;
 `
 
+export const NavLogoLink = styled(RouterLink)``
+
 export const NavLogo = styled.img`
 	width: 150px;
 `
@@ -46,7 +48,13 @@ export const NavLinks = styled.div`
 export const NavLink = styled(RouterLink)`
 	padding: 10px;
 	${onDesktop`
+		border-bottom: 2px solid transparent;
 		margin-right: 20px;
+		transition: 350ms;
+		&:hover,
+		&.active {
+			border-bottom: 2px solid ${Colors.BLUE};
+		}
 	`}
 	${onMobile`
 		display: block;

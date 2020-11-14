@@ -28,6 +28,13 @@ export const MovieReturnIcon = styled.div`
 	path {
 		fill: ${Colors.DARK_GRAY};
 	}
+	${onDesktop`
+		transition: 250ms;
+		&:hover {
+			box-shadow: 0 0 8px 2px ${rgba(Colors.DARK, .1)};
+			transform: scale(1.03);
+		}
+	`}
 `
 
 export const MovieReturnText = styled.span`
@@ -43,10 +50,15 @@ export const MovieWrapper = styled.div`
 export const MovieImageWrapper = styled.div`
 	box-shadow: 0 0 28px ${rgba(Colors.DARK, .2)};
 	border-radius: 7px;
-	min-width: 380px;
 	overflow: hidden;
-	padding: 30px;
 	position: relative;
+	${onDesktop`
+		min-width: 380px;
+		padding: 30px;
+	`}
+	${onMobile`
+		padding: 20px;
+	`}
 `
 
 export const MovieImageWithBlur = styled.img`
@@ -63,6 +75,14 @@ export const MovieImage = styled.img`
 	border-radius: 7px;
 	position: relative;
 	width: 100%;
+	${onDesktop`
+		transition: 1s;
+		&:hover {
+			box-shadow: 0 0 26px ${rgba(Colors.DARK, .5)};
+			transform: scale(1.03);
+			transition: 350ms;
+		}
+	`}
 `
 
 export const MovieInformationWrapper = styled.div`

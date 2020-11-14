@@ -41,7 +41,7 @@ const GridItem = ({ id, title, poster, year, plot, favorites, updateFavorites })
 					<GridItemTitle>{title}</GridItemTitle>
 					<GridItemSubtitle>{year.replace(/–\s*$/, '')}</GridItemSubtitle>
 					<GridItemDescription>{plot}</GridItemDescription>
-					<GridItemIcon onClick={handleFavorite}>
+					<GridItemIcon onClick={handleFavorite} title="Adicionar ou remover dos favoritos">
 						{
 							movieIsOnFavoriteMovies(favorites, id) ?
 								<StarFilledIcon />

@@ -22,9 +22,17 @@ export const GridItemElement = styled(NavLink)`
 	display: flex;
 	overflow: hidden;
 	position: relative;
+	${onDesktop`
+		transition: 350ms;
+		&:hover {
+			box-shadow: 5px 5px 25px ${rgba(Colors.DARK, .13)};
+			transform: translate(-2px, -2px);
+		}
+	`}
 `
 
 export const GridItemImage = styled.img`
+	object-fit: cover;
 	${onDesktop`
 		width: 30%;
 	`}

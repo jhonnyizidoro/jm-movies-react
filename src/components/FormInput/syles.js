@@ -23,5 +23,16 @@ export const FormInputElement = styled.input`
 	border-radius: 99px;
 	outline: none;
 	padding: 20px 20px 20px 70px;
+	transition: 250ms;
 	width: 100%;
+	&:focus {
+		border: 1px solid ${Colors.GRAY};
+	}
+	&::-webkit-input-placeholder {
+		transition: .5s;
+	}
+	&:focus::-webkit-input-placeholder {
+		opacity: 0;
+		transform: translateY(15px);
+	}
 `

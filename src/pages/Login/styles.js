@@ -29,6 +29,7 @@ export const LoginSubtitle = styled.div`
 	padding: 0 15px;
 	position: absolute;
 	right: 50%;
+	white-space: nowrap;
 	top: 50%;
 	transform: translate(50%, -50%);
 `

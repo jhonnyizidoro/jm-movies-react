@@ -86,8 +86,16 @@ const MoviePage = ({ favorites, updateFavorites }) => {
 				</MovieReturnLink>
 				<MovieWrapper>
 					<MovieImageWrapper>
-						<MovieImageWithBlur src={poster !== 'N/A' ? poster : ImagePlaceholder} alt={title} />
-						<MovieImage src={poster !== 'N/A' ? poster : ImagePlaceholder} alt={title} />
+						<MovieImageWithBlur
+							src={poster !== 'N/A' ? poster : ImagePlaceholder}
+							alt={title}
+							title={title}
+						/>
+						<MovieImage
+							src={poster !== 'N/A' ? poster : ImagePlaceholder}
+							alt={title}
+							title={title}
+						/>
 					</MovieImageWrapper>
 					<MovieInformationWrapper>
 						<MovieTitleWrapper>
@@ -100,7 +108,7 @@ const MoviePage = ({ favorites, updateFavorites }) => {
 								<MovieSubtitle>{year.replace(/–\s*$/, '')}</MovieSubtitle>
 						}
 						<MovieDescription>{plot}</MovieDescription>
-						<MovieFavorite onClick={handleFavorite}>
+						<MovieFavorite onClick={handleFavorite} title="Adicionar ou remover dos favoritos">
 							{
 								movieIsOnFavoriteMovies(favorites, id) ?
 									(

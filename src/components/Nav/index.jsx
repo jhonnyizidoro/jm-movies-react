@@ -14,6 +14,7 @@ import Logo from '../../assets/images/logo.svg'
 import {
 	NavElement,
 	NavWrapper,
+	NavLogoLink,
 	NavLogo,
 	NavLinks,
 	NavLink,
@@ -27,10 +28,24 @@ const Nav = ({ currentUser, logout, favorites }) => {
 		<NavElement>
 			<Container>
 				<NavWrapper>
-					<NavLogo src={Logo} alt="Logo JM. MOVIES" />
+					<NavLogoLink to="/">
+						<NavLogo src={Logo} alt="Logo JM. MOVIES" />
+					</NavLogoLink>
 					<NavLinks isOpen={isOpen} onClick={() => setOpen(false)}>
-						<NavLink exact to="/">Início</NavLink>
-						<NavLink exact to="/favorites">Meus favoritos ({favorites.length})</NavLink>
+						<NavLink
+							exact
+							to="/"
+							activeClassName="active"
+						>
+							Início
+						</NavLink>
+						<NavLink
+							exact
+							to="/favorites"
+							activeClassName="active"
+						>
+							Meus favoritos ({favorites.length})
+						</NavLink>
 						{
 							currentUser ?
 								<Button
