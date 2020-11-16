@@ -49,12 +49,17 @@ export const GridItemInformation = styled.div`
 `
 
 export const GridItemTitle = styled.h3`
-	font-size: 1.1rem;
 	font-weight: 600;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-	width: 220px;
+	${onDesktop`
+		font-size: 1.1rem;
+		width: 220px;
+	`}
+	${onMobile`
+		width: 160px;
+	`}
 `
 
 export const GridItemSubtitle = styled.div`

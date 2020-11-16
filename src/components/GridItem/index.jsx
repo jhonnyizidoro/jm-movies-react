@@ -6,6 +6,7 @@ import { updateFavorites } from '../../redux/movie/movie.actions'
 import { selectFavoriteMovies } from '../../redux/movie/movie.selectors'
 import { toggleMovieFromFavorites, movieIsOnFavoriteMovies } from '../../redux/movie/movie.util'
 
+import ImagePlaceholder from '../../assets/images/image-placeholder.png'
 import { ReactComponent as StarOutlinedIcon } from '../../assets/icons/star-outlined.svg'
 import { ReactComponent as StarFilledIcon } from '../../assets/icons/star-filled.svg'
 
@@ -36,7 +37,11 @@ const GridItem = ({ id, title, poster, year, plot, favorites, updateFavorites })
 	return (
 		<GridItemWrapper>
 			<GridItemElement to={`/movie/${title}`}>
-				<GridItemImage src={poster} alt={title} />
+				<GridItemImage
+					src={poster !== 'N/A' ? poster : ImagePlaceholder}
+					alt={title}
+					title={title}
+				/>
 				<GridItemInformation>
 					<GridItemTitle>{title}</GridItemTitle>
 					<GridItemSubtitle>{year.replace(/–\s*$/, '')}</GridItemSubtitle>

@@ -3,6 +3,7 @@ import { rgba } from 'polished'
 import { NavLink } from 'react-router-dom'
 
 import { Colors } from '../../assets/styles/variables'
+import { onDesktop } from '../../assets/styles/media-queries'
 
 const getButtonStylesBySize = ({ isLarge }) => {
 	if (isLarge) {
@@ -18,7 +19,7 @@ const getButtonStylesBySize = ({ isLarge }) => {
 }
 
 const buttonStyles = css`
-	;${getButtonStylesBySize};
+	${getButtonStylesBySize};
 	background: linear-gradient(to right, ${Colors.LIGHT_BLUE}, ${Colors.BLUE});
 	border: 0;
 	border-radius: 99px;
@@ -28,11 +29,13 @@ const buttonStyles = css`
 	display: inline-block;
 	font-weight: 600;
 	outline: none;
-	transition: 300ms;
 	word-break: break-word;
-	&:hover {
-		transform: scale(1.03);
-	}
+	${onDesktop`
+		transition: 300ms;
+		&:hover {
+			transform: scale(1.03);
+		}
+	`}
 `
 
 export const RegularButton = styled.button`${buttonStyles}`
